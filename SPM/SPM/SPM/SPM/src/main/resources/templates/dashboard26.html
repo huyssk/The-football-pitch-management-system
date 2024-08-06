@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<!-- Mirrored from educhamp.themetrades.com/demo/admin/teacher-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
+<head>
+
+    <!-- META ============================================= -->
+    <meta charset="utf-8">
+    <!--	<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="robots" content=""/>
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="SPM: Thuê sân bóng đá uy tín"/>
+
+    <!-- OG -->
+    <meta property="og:title" content="SPM: Thuê sân bóng đá uy tín"/>
+    <meta property="og:description" content="SPM: Thuê sân bóng đá uy tín"/>
+    <meta property="og:image" content=""/>
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="../error-404.html" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/images/favicon.png}"/>
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>SPM: Thuê sân bóng đá </title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+    <script th:src="@{/assets/js/html5shiv.min.js}"></script>
+    <script th:src="@{/assets/js/respond.min.js}"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/css/assets.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/vendors/calendar/fullcalendar.css}">
+    <!--	<link rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/css/emmploy.css}">-->
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/css/typography.css}">
+
+    <!-- SHORTCODES ============================================= -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/css/shortcodes/shortcodes.css}">
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/css/dashboard.css}">
+    <link class="skin" rel="stylesheet" type="text/css" th:href="@{/assets/admin/assets/css/color/color-1.css}">
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+</head>
+
+<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+<!-- header start -->
+<header class="ttr-header">
+    <div class="ttr-header-wrapper">
+        <!--logo start -->
+        <div class="ttr-logo-box">
+            <div>
+                <a th:href="@{/spm/home}" class="ttr-logo">
+                    <img alt="" class="ttr-logo-mobile" th:src="@{/assets/images/logo.png}" width="30" height="30">
+                    <img alt="" class="ttr-logo-desktop" th:src="@{/assets/images/logo.png}" width="90" height="27">
+                </a>
+            </div>
+        </div>
+        <!--logo end -->
+        <div class="ttr-header-menu">
+            <!-- header left menu start -->
+            <ul class="ttr-header-navigation">
+                <li>
+                    <a th:href="@{/spm/home}" class="ttr-material-button ttr-submenu-toggle">TRANG CHỦ</a>
+                </li>
+
+            </ul>
+            <!-- header left menu end -->
+        </div>
+        <div class="ttr-header-right ttr-with-seperator">
+            <!-- header right menu start -->
+            <ul class="ttr-header-navigation">
+                <!--<li>
+                    <a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"></i></a>
+                </li>-->
+                <li>
+                    <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt=""
+                                                                                                                  th:src="@{/assets/admin/assets/images/testimonials/pic3.jpg}"
+                </li>
+                <li class="ttr-hide-on-mobile">
+                    <a href="#" class="ttr-material-button"><i class="ti-layout-grid3-alt"></i></a>
+                    <div class="ttr-header-submenu ttr-extra-menu">
+                        <a href="#">
+                            <i class="fa fa-music"></i>
+                            <span>Musics</span>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-youtube-play"></i>
+                            <span>Videos</span>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-envelope"></i>
+                            <span>Emails</span>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-book"></i>
+                            <span>Reports</span>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-smile-o"></i>
+                            <span>Persons</span>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-picture-o"></i>
+                            <span>Pictures</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <!-- header right menu end -->
+        </div>
+        <!--header search panel start -->
+        <div class="ttr-search-bar">
+            <form class="ttr-search-form">
+                <div class="ttr-search-input-wrapper">
+                    <input type="text" name="qq" placeholder="search something..." class="ttr-search-input">
+                    <button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i>
+                    </button>
+                </div>
+                <span class="ttr-search-close ttr-search-toggle">
+						<i class="ti-close"></i>
+					</span>
+            </form>
+        </div>
+        <!--header search panel end -->
+    </div>
+</header>
+<!-- header end -->
+<!-- Left sidebar menu start -->
+<div class="ttr-sidebar">
+    <div class="ttr-sidebar-wrapper content-scroll">
+        <!-- side menu logo start -->
+        <!-- side menu logo end -->
+        <!-- sidebar menu start -->
+        <nav class="ttr-sidebar-navi">
+            <ul>
+                <li>
+                    <a th:href="@{/admin/dashboard26}" class="ttr-material-button">
+                        <!--<span class="ttr-icon"><i class="ti-book"></i></span>-->
+                        <span class="ttr-label">Thống kê</span>
+                        <!--<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>-->
+                    </a>
+                </li>
+                <li>
+                    <a  th:href="@{/admin/showEmployee}" class="ttr-material-button">
+                        <!--<span class="ttr-icon"><i class="ti-home"></i></span>-->
+                        <span class="ttr-label">Quản lý nhân viên</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/showBookings}" class="ttr-material-button">
+                        <!--<span class="ttr-icon"><i class="ti-book"></i></span>-->
+                        <span class="ttr-label">Yêu cầu thuê</span>
+                        <!--<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>-->
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/cancellation-requests}" class="ttr-material-button">
+                        <!--<span class="ttr-icon"><i class="ti-email"></i></span>-->
+                        <span class="ttr-label">Yêu cầu hủy</span>
+                        <!--<span><i class="fa fa-angle-down"></i></span>-->
+                    </a>
+
+                </li>
+                <li>
+                    <a th:href="@{/admin/edit}" class="ttr-material-button">
+                        <!--<span class="ttr-icon"><i class="ti-email"></i></span>-->
+                        <span class="ttr-label">Quản lí sân bóng</span>
+                        <!--<span><i class="fa fa-angle-down"></i></span>-->
+                    </a>
+
+                </li>
+
+
+
+
+            </ul>
+            <!-- sidebar menu end -->
+        </nav>
+        <!-- sidebar menu end -->
+    </div>
+</div>
+
+<br><br>
+
+<main class="ttr-wrapper">
+    <div class="container-fluid">
+        <div class="db-breadcrumb">
+            <h4 class="breadcrumb-title">Thống kê</h4>
+            <ul class="db-breadcrumb-list">
+                <li><a th:href="@{/view/home}">Home</a></li>
+                <li>Thống kê</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Số lượng đặt sân theo ngày</h5>
+                        <canvas id="datSanChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Số lượng hủy sân theo ngày</h5>
+                        <canvas id="huySanChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Doanh thu trong một tháng của cả web :
+                            <li th:each="entry : ${tongDoanhThuTheoThang}">
+                                <span th:text="${entry.key}">Tháng</span>:
+                                <span th:text="${#numbers.formatDecimal(entry.value, 0, 'COMMA', 2, 'POINT')}">0.00</span>
+                            </li>
+                        </h5>
+                        <canvas id="doanhThuWebChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var soLuongDatHuySan = /*[[${soLuongDatHuySan}]]*/ {};
+    var doanhThuWebTheoThang = /*[[${doanhThuWebTheoThang}]]*/ {};
+    /*]]>*/
+
+    // Hàm để lấy tất cả các ngày từ dữ liệu
+    function getAllDates(data) {
+        let allDates = new Set();
+        Object.values(data).forEach(san => {
+            Object.values(san).forEach(type => {
+                Object.keys(type).forEach(date => allDates.add(date));
+            });
+        });
+        return Array.from(allDates).sort();
+    }
+
+    // Hàm để tạo dữ liệu cho biểu đồ
+    function createChartData(data, type) {
+        let labels = getAllDates(data);
+        let datasets = Object.entries(data).map(([sanBong, sanData]) => ({
+            label: sanBong,
+            data: labels.map(date => (sanData[type] && sanData[type][date]) || 0),
+            backgroundColor: getRandomColor(),
+            borderColor: getRandomColor(),
+            borderWidth: 1
+        }));
+        return { labels, datasets };
+    }
+
+    // Biểu đồ đặt sân
+    var datSanCtx = document.getElementById('datSanChart').getContext('2d');
+    var datSanChart = new Chart(datSanCtx, {
+        type: 'bar',
+        data: createChartData(soLuongDatHuySan, 'dat'),
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Số lượng đặt sân'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Ngày'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Số lượng đặt sân theo ngày'
+                }
+            }
+        }
+    });
+
+    // Biểu đồ hủy sân
+    var huySanCtx = document.getElementById('huySanChart').getContext('2d');
+    var huySanChart = new Chart(huySanCtx, {
+        type: 'bar',
+        data: createChartData(soLuongDatHuySan, 'huy'),
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Số lượng hủy sân'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Ngày'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Số lượng hủy sân theo ngày'
+                }
+            }
+        }
+    });
+
+    // Biểu đồ doanh thu web theo tháng
+    var datasets = [];
+    var labels = Array.from({length: 31}, (_, i) => (i + 1).toString().padStart(2, '0'));
+
+    for (var yearMonth in doanhThuWebTheoThang) {
+        var data = labels.map(day => doanhThuWebTheoThang[yearMonth][day] || 0);
+        datasets.push({
+            label: yearMonth,
+            data: data,
+            borderColor: getRandomColor(),
+            fill: false
+        });
+    }
+
+    var doanhThuWebCtx = document.getElementById('doanhThuWebChart').getContext('2d');
+    var doanhThuWebChart = new Chart(doanhThuWebCtx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Doanh thu (VND)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Ngày trong tháng'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Doanh thu web theo ngày trong tháng'
+                }
+            }
+        }
+    });
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('#addEmployeeForm').on('submit', function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: '/admin/add_process',
+                type: 'POST',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        alert('Thêm nhân viên thành công!');
+                        $('#addEmployeeModal').modal('hide');
+                        location.reload();
+                    } else {
+                        showErrors(response.errors);
+                    }
+                },
+                error: function(xhr) {
+                    if (xhr.status === 400) {
+                        const response = JSON.parse(xhr.responseText);
+                        showErrors(response.errors);
+                    } else {
+                        alert('Đã xảy ra lỗi. Vui lòng thử lại.');
+                    }
+                }
+            });
+        });
+
+        function showErrors(errors) {
+            // Xóa tất cả thông báo lỗi cũ
+            $('.error-message').remove();
+
+            // Hiển thị lỗi mới
+            $.each(errors, function(field, messages) {
+                var inputField = $('#' + field);
+                var errorHtml = '<div class="error-message text-danger">';
+                $.each(messages, function(index, message) {
+                    errorHtml += '<p>' + message + '</p>';
+                });
+                errorHtml += '</div>';
+                inputField.after(errorHtml);
+            });
+        }
+
+        // Chỉ reset form khi mở modal mới
+        $('#addEmployeeModal').on('show.bs.modal', function (e) {
+            $('#addEmployeeForm')[0].reset();
+            $('.error-message').remove();
+        });
+    });
+</script>
+<script th:src="@{/assets/admin/assets/js/jquery.min.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/bootstrap/js/popper.min.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/bootstrap-select/bootstrap-select.min.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/magnific-popup/magnific-popup.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/counter/waypoints-min.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/counter/counterup.min.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/imagesloaded/imagesloaded.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/masonry/masonry.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/masonry/filter.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/owl-carousel/owl.carousel.js}"></script>
+<script th:src='@{/assets/admin/assets/vendors/scroll/scrollbar.min.js}'></script>
+<script th:src="@{/assets/admin/assets/js/functions.js}"></script>
+<script th:src="@{/assets/admin/assets/vendors/chart/chart.min.js}"></script>
+<script th:src="@{/assets/admin/assets/js/admin.js}"></script>
+<script th:src='@{/assets/admin/assets/vendors/switcher/switcher.js}'></script>
+<script>
+    // Pricing add
+    function newMenuItem() {
+        var newElem = $('tr.list-item').first().clone();
+        newElem.find('input').val('');
+        newElem.appendTo('table#item-add');
+    }
+
+    if ($("table#item-add").is('*')) {
+        $('.add-item').on('click', function (e) {
+            e.preventDefault();
+            newMenuItem();
+        });
+        $(document).on("click", "#item-add .delete", function (e) {
+            e.preventDefault();
+            $(this).parent().parent().parent().parent().remove();
+        });
+    }
+</script>
+</body>
+
+<!-- Mirrored from educhamp.themetrades.com/demo/admin/teacher-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
+</html>
